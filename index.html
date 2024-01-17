@@ -1,4 +1,4 @@
-<html class="bg-amber-100 ">
+<html class="bg-amber-50 md:bg-amber-100 ">
 
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>About Jerry Ma</title>
     <link rel="stylesheet" href="./build.css">
     </script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -25,61 +25,67 @@
     </style>
 </head>
 
-<body class="relative font-mono m-auto w-[60vw] h-screen
+<body class="relative font-mono  md:m-auto md:w-[50vw]  md:h-screen
  flex flex-col justify-start items-center
- bg-amber-50 md:bg-white
-   shadow rounded-lg p-6 pt-10 ">
+ bg-amber-0 md:bg-white
+   shadow rounded-lg p-6 pt-10 overflow-y-scroll">
     <div class="absolute top-0 right-6">
         <button id="lang-en" class="">English</button>
         |
         <button id="lang-zh">中文</button>
     </div>
-    <div class="w-full flex bg-white  flex-row items-center justify-between">
+    <div class="mt-10 md:mt-0 relative w-full flex flex-row items-center justify-between">
         <div class="flex flex-col h-full justify-around">
             <div>
-                <span class="text-2xl font-semibold" data-lk="name"></span>
-                <span class="text-base font-mono" data-lk="nickname"> </span>
+                <span class="text-4xl md:text-2xl font-semibold" data-lk="name"></span>
+                <span class="text-xl md:text-base font-mono" data-lk="nickname"> </span>
             </div>
-            <div class="flex mb-2 mt-2">
+            <div class="mb-4 md:mb-2 flex mt-2 flex-col md:flex-row">
                 <span class="flex h-4 text-sm items-center">
                     <img src="./assets/email.svg" class="h-4 object-contain mr-1" /> dramalfcsc@gmail.com
                 </span>
-                <span class="ml-4 flex h-4 text-sm items-center">
+                <span class="mt-2 md:mt-0 md:ml-4 flex h-4 text-sm items-center">
                     <img src="./assets/github.svg" class="h-4 object-contain mr-1" /><a
                         href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
                 </span>
             </div>
             <div id="education">
-                <li class="text-gray-600 text-sm" data-lk="university1"></li>
+                <li class="mb-2 md:mb-0 text-gray-600 text-xs md:text-sm" data-lk="university1"></li>
             </div>
             <div id="work-experience">
-                <li class="text-gray-600 text-sm" data-lk="work1"></li>
+                <li class="text-gray-600 text-xs md:text-sm" data-lk="work1"></li>
             </div>
         </div>
-        <img src="./assets/avatar.jpg" class="w-32 h-32 object-cover rounded-full overflow-hidden">
+        <img src="./assets/avatar.jpg" class="absolute -z-10 md:z-0 right-0 top-0 md:relative w-20 h-20 md:w-32 md:h-32 object-cover rounded-full overflow-hidden">
     </div>
 
     <div class="border-t border-gray-300 my-4 w-full"></div>
-    <div id="self-introduction" class="w-full mb-4 break-all">
+    <div id="self-introduction" class="hidden md:block w-full mb-4 break-all">
         <p class="mb-4 indent-8" data-lk="introduction1">
 
         </p>
         <p class="indent-8" data-lk="introduction2">
         </p>
     </div>
-
-    <div class="swiper w-full h-60 pt-7 pr-6 pl-6 overflow-hidden"
-        style="padding: 1rem 1.5rem 0 1.5rem;word-break: inter-word;">
+    <div  class="md:hidden w-[80%] h-max flex flex-col items-center mb-4">
+        <div class="mb-2" data-lk="3things"></div>
+        <div class="mb-2">💻 - It’s just a job</div>
+       <div class="mb-2">🎬 -《妄想粉碎计划》</div>
+       <div class="mb-2">⚽️ - 🏆Arsenal🏆</div>
+       
+    </div>
+    <div class="swiper w-full h-80 md:p-6 pt-7 mb-4 box-border overflow-hidden"
+        style="word-break: inter-word;">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper mt-12">
             <!-- Slides -->
             <div class="swiper-slide">
-                <div class="w-full mx-auto bg-slate-50">
+                <div class="md:w-[90%] mx-auto bg-slate-50">
                     <a href="https://github.com/Dramalf/2mobiles-VR-shooting-game" target="_blank"
                         class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-28">
-                            <img class="w-1/3 h-full object-cover" src="./assets/p1.jpg" alt="Project Cover">
-                            <div class="w-2/3 p-4">
+                        <div class="flex items-center justify-start h-48">
+                            <img class="w-2/5 h-full object-cover" src="./assets/p1.jpg" alt="Project Cover">
+                            <div class="w-3/5 p-4">
                                 <h5 class="text-lg font-bold" data-lk="project1name"></h5>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
                                     data-lk="project1introduction">
@@ -91,12 +97,12 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="w-full mx-auto bg-slate-50">
+                <div class="md:w-[90%] mx-auto bg-slate-50">
                     <a href="https://github.com/Dramalf/GRE3000-cli" target="_blank"
                         class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-28">
-                            <img class="w-1/3 h-full object-cover" src="./assets/p2.jpg" alt="Project Cover">
-                            <div class="w-2/3 p-4">
+                        <div class="flex items-center justify-start h-48">
+                            <img class="w-2/5 h-full object-cover" src="./assets/p2.jpg" alt="Project Cover">
+                            <div class="w-3/5 p-4">
                                 <h5 class="text-lg font-bold" data-lk="project2name"></h5>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
                                     data-lk="project2introduction">
@@ -108,12 +114,12 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="w-full mx-auto bg-slate-50">
+                <div class="md:w-[90%] mx-auto bg-slate-50">
                     <a href="https://github.com/Dramalf/ocr_chatbot" target="_blank"
                         class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-28">
-                            <img class="w-1/3 h-full object-cover" src="./assets/p3.jpg" alt="Project Cover">
-                            <div class="w-2/3 p-4">
+                        <div class="flex items-center justify-start h-48">
+                            <img class="w-2/5 h-full object-cover" src="./assets/p3.jpg" alt="Project Cover">
+                            <div class="w-3/5 p-4">
                                 <h5 class="text-lg font-bold" data-lk="project3name"></h5>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
                                     data-lk="project3introduction">
@@ -125,12 +131,12 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="w-full mx-auto bg-slate-50">
+                <div class="md:w-[90%] mx-auto bg-slate-50">
                     <a href="https://github.com/Dramalf/DramaDirector" target="_blank"
                         class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-28">
-                            <img class="w-1/3 h-full object-cover" src="./assets/p4.jpg" alt="Project Cover">
-                            <div class="w-2/3 p-4">
+                        <div class="flex items-center justify-start h-48">
+                            <img class="w-2/5 h-full object-cover" src="./assets/p4.jpg" alt="Project Cover">
+                            <div class="w-3/5 p-4">
                                 <h5 class="text-lg font-bold" data-lk="project4name"></h5>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
                                     data-lk="project4introduction">
@@ -141,12 +147,12 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="w-full mx-auto bg-slate-50">
+                <div class="md:w-[90%] mx-auto bg-slate-50">
                     <a href="https://github.com/Dramalf/puppeteer-webcodec-lottie" target="_blank"
                         class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-28">
-                            <img class="w-1/3 h-full object-cover" src="./assets/p5.jpg" alt="Project Cover">
-                            <div class="w-2/3 p-4">
+                        <div class="flex items-center justify-start h-48">
+                            <img class="w-2/5 h-full object-cover" src="./assets/p5.jpg" alt="Project Cover">
+                            <div class="w-3/5 p-4">
                                 <h5 class="text-lg font-bold" data-lk="project5name"></h5>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
                                     data-lk="project5introduction">
@@ -158,12 +164,12 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="w-full mx-auto bg-slate-50">
+                <div class="md:w-[90%] mx-auto bg-slate-50">
                     <a href="https://github.com/Dramalf/Web-Custom-Tower-Defense-game" target="_blank"
                         class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-28">
-                            <img class="w-1/3 h-full object-cover" src="./assets/p6.jpg" alt="Project Cover">
-                            <div class="w-2/3 p-4">
+                        <div class="flex items-center justify-start h-48">
+                            <img class="w-2/5 h-full object-cover" src="./assets/p6.jpg" alt="Project Cover">
+                            <div class="w-3/5 p-4">
                                 <h5 class="text-lg font-bold" data-lk="project6name"></h5>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
                                     data-lk="project6introduction">
@@ -175,12 +181,13 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="hidden md:block swiper-button-prev"></div>
+        <div class="hidden md:block swiper-button-next"></div>
 
 
     </div>
-    <footer class="absolute bottom-10 m-auto">
+
+    <footer class="absolute  text-xs bottom-1 md:bottom-10 m-auto text-gray-600">
         <p>&copy; 2024 Jerry Ma</p>
     </footer>
     <script>
@@ -194,7 +201,7 @@
             speed: 500, //切换过渡速
             loop: true,
             slidesPerView: "auto",
-            centeredSlides: true, //设置slide居中
+            centeredSlides: true,
             spaceBetween: 20,
 
             navigation: {
@@ -203,11 +210,11 @@
             },
             effect: 'coverflow',
             coverflowEffect: {
-                rotate: 0, //slide做3d旋转时Y轴的旋转角度。默认50。
-                stretch: 130, //每个slide之间的拉伸值（距离），越大slide靠得越紧。 默认0。
-                depth: 350, //slide的位置深度。值越大z轴距离越远，看起来越小。 默认100。
-                modifier: 1, //depth和rotate和stretch的倍率，相当于            depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
-                slideShadows: false //开启slide阴影。默认 true。
+                rotate: 10, 
+                stretch: 150, 
+                depth: 300, 
+                modifier: 1, 
+                slideShadows: false 
             }
         });
     </script>
