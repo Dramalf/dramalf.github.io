@@ -1,4 +1,4 @@
-{
+window.languageObj = {
     "zh": {
         "name": "马聆风",
         "nickname": "Jerry Ma",
@@ -18,13 +18,12 @@
         "project5introduction": "在服务端通过puppeteer操作无头浏览器，基于webCodec和Ffmpeg实现lottie动画转视频，关于webCodec API的一个不错的学习和尝试",
         "project6name": "自定义塔防游戏",
         "project6introduction": "基于预设数据来驱动地图加载和怪兽波次，你还以自定义防御塔的样式和攻击属性。灵感来源于我很喜欢的一款塔防游戏《皇家守卫军》",
-        "3things": "关于我的三件事"
     },
     "en": {
         "name": "Jerry Ma",
         "nickname": "马聆风",
         "university1": "HUST - CS Bachelor's degree",
-        "work1": "Alibaba Group SMEs - Full Stack Engineer",
+        "work1": "Alibaba Group SMEs - SDE",
         "introduction1": "I am interested in audio and video interaction, multimedia processing and game development. During university I learned some software development skills and was keen to develop some interesting applications. After work, I was mainly responsible for multimedia processing and developed some audio and video synthesis kernels. ",
         "introduction2": "In the future, I would like to learn some hardware development techniques and develop 「smart wearable devices」 for athletes. These wearable devices can collect and analyse data from team sports to provide athletes with more rational and effective tactical strategies, posture guidance and improved performance.",
         "project1name": "Motion Sensory VR Shooting Game",
@@ -39,6 +38,6 @@
         "project5introduction": "Converting lottie animation to video through webCodec and Ffmpeg. A good project for learning and trying webCodec API!",
         "project6name": "Custom tower defence game",
         "project6introduction": "You can customise the map, monsters and defence properties with preset data. Inspired by one of my favourite tower defence games 「Kingdom Rush」",
-        "3things": "3 things about me"
     }
 }
+window.lang='en'

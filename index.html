@@ -1,14 +1,14 @@
-<html class="bg-amber-50 md:bg-amber-100 ">
+<html class="bg-amber-50 ">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Jerry Ma</title>
     <link rel="stylesheet" href="./build.css">
-    </script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <script src="./components/ProjectCard/index.js"></script>
+    <script src="./language.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
         .swiper-button-next {
@@ -22,178 +22,99 @@
             transform: scale(0.5);
             margin-left: -10px;
         }
+
+        .swiper-button-prev {
+            box-shadow: none !important;
+        }
+
+        .swiper-button-next {
+            box-shadow: none !important;
+        }
     </style>
 </head>
 
-<body class="relative font-mono  md:m-auto md:w-[50vw]  md:h-screen
- flex flex-col justify-start items-center
- bg-amber-0 md:bg-white
+<body class="relative font-mono  sm:m-auto lg:w-[50vw]
+ flex flex-col-reverse sm:flex-col justify-end sm:justify-start items-center
+ bg-amber-0 lg:bg-white min-h-screen h-max
    shadow rounded-lg p-6 pt-10 overflow-y-scroll">
     <div class="absolute top-0 right-6">
         <button id="lang-en" class="">English</button>
         |
         <button id="lang-zh">中文</button>
     </div>
-    <div class="mt-10 md:mt-0 relative w-full flex flex-row items-center justify-between">
-        <div class="flex flex-col h-full justify-around">
-            <div>
-                <span class="text-4xl md:text-2xl font-semibold" data-lk="name"></span>
-                <span class="text-xl md:text-base font-mono" data-lk="nickname"> </span>
+    <div class="w-full flex flex-col justify-center items-center">
+        <div class="mb-4 sm:mb-0 relative w-full h-full flex flex-col sm:flex-row items-center justify-between">
+            <div class="flex flex-col h-full w-full justify-around items-center sm:items-start">
+                <div >
+                    <span class="text-4xl sm:text-2xl font-semibold" data-lk="name"></span>
+                    <span class="text-xl sm:text-base font-mono" data-lk="nickname"> </span>
+                </div>
+                
+                <div class=" mb-4 sm:mb-2 flex mt-4 sm:mt-2 flex-col items-center sm:items-start">
+                    <span class="flex h-4 text-sm items-center">
+                        <img src="./assets/email.svg" class="h-4 object-contain mr-1" /> dramalfcsc@gmail.com
+                    </span>
+                    <span class="mt-2 flex h-4 text-sm items-center">
+                        <img src="./assets/github.svg" class="h-4 object-contain mr-1" /><a
+                            href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
+                    </span>
+                    <img src="./assets/avatar.jpg" class="mt-8 -mb-4 sm:hidden w-20 h-20  object-cover 
+                    rounded-full overflow-hidden">
+                </div>
+                <div id="education" class="hidden sm:block">
+                    <li class="mb-2 sm:mb-0 text-gray-600 text-xs sm:text-sm" data-lk="university1"></li>
+                </div>
+                <div id="work-experience" class="hidden sm:block">
+                    <li class="text-gray-600 text-xs sm:text-sm" data-lk="work1"></li>
+                </div>
             </div>
-            <div class="mb-4 md:mb-2 flex mt-2 flex-col md:flex-row">
-                <span class="flex h-4 text-sm items-center">
-                    <img src="./assets/email.svg" class="h-4 object-contain mr-1" /> dramalfcsc@gmail.com
-                </span>
-                <span class="mt-2 md:mt-0 md:ml-4 flex h-4 text-sm items-center">
-                    <img src="./assets/github.svg" class="h-4 object-contain mr-1" /><a
-                        href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
-                </span>
-            </div>
-            <div id="education">
-                <li class="mb-2 md:mb-0 text-gray-600 text-xs md:text-sm" data-lk="university1"></li>
-            </div>
-            <div id="work-experience">
-                <li class="text-gray-600 text-xs md:text-sm" data-lk="work1"></li>
-            </div>
+            <img src="./assets/avatar.jpg" class="hidden sm:block w-48 h-32 object-cover 
+                rounded-sm overflow-hidden">
         </div>
-        <img src="./assets/avatar.jpg" class="absolute -z-10 md:z-0 right-0 top-0 md:relative w-20 h-20 md:w-32 md:h-32 object-cover rounded-full overflow-hidden">
+        <div class="text-[8px] w-[60%] sm:hidden flex flex-wrap h-20 justify-evenly">
+            
+            <div class="h-4 rounded-full  bg-green-50 leading-4  p-1 pt-0 shadow-md text-center">💻 Full Stack</div>
+            <div class="h-4 rounded-full   bg-slate-50 leading-4  p-1 pt-0  shadow-md text-center">⚽️ Football</div>
+            <div class="h-4 rounded-full  bg-cyan-50 leading-4 p-1  pt-0  shadow-md  text-center">🎬 Director</div>
+        </div>
     </div>
 
-    <div class="border-t border-gray-300 my-4 w-full"></div>
-    <div id="self-introduction" class="hidden md:block w-full mb-4 break-all">
+    <div class="border-t border-gray-300 sm:my-4 mt-0 mb-4 w-full"></div>
+    <div id="self-introduction" class="hidden sm:block w-full mb-4 break-all">
         <p class="mb-4 indent-8" data-lk="introduction1">
 
         </p>
         <p class="indent-8" data-lk="introduction2">
         </p>
     </div>
-    <div  class="md:hidden w-[80%] h-max flex flex-col items-center mb-4">
-        <div class="mb-2" data-lk="3things"></div>
-        <div class="mb-2">💻 - It’s just a job</div>
-       <div class="mb-2">🎬 -《妄想粉碎计划》</div>
-       <div class="mb-2">⚽️ - 🏆Arsenal🏆</div>
-       
-    </div>
-    <div class="swiper w-full h-80 md:p-6 pt-7 mb-4 box-border overflow-hidden"
-        style="word-break: inter-word;">
+
+    <div class="swiper  w-full h-36 sm:h-min p-6 sm:mb-3 box-border overflow-hidden ">
         <!-- Additional required wrapper -->
-        <div class="swiper-wrapper mt-12">
+        <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">
-                <div class="md:w-[90%] mx-auto bg-slate-50">
-                    <a href="https://github.com/Dramalf/2mobiles-VR-shooting-game" target="_blank"
-                        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-48">
-                            <img class="w-2/5 h-full object-cover" src="./assets/p1.jpg" alt="Project Cover">
-                            <div class="w-3/5 p-4">
-                                <h5 class="text-lg font-bold" data-lk="project1name"></h5>
-                                <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
-                                    data-lk="project1introduction">
 
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="md:w-[90%] mx-auto bg-slate-50">
-                    <a href="https://github.com/Dramalf/GRE3000-cli" target="_blank"
-                        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-48">
-                            <img class="w-2/5 h-full object-cover" src="./assets/p2.jpg" alt="Project Cover">
-                            <div class="w-3/5 p-4">
-                                <h5 class="text-lg font-bold" data-lk="project2name"></h5>
-                                <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
-                                    data-lk="project2introduction">
-
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="md:w-[90%] mx-auto bg-slate-50">
-                    <a href="https://github.com/Dramalf/ocr_chatbot" target="_blank"
-                        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-48">
-                            <img class="w-2/5 h-full object-cover" src="./assets/p3.jpg" alt="Project Cover">
-                            <div class="w-3/5 p-4">
-                                <h5 class="text-lg font-bold" data-lk="project3name"></h5>
-                                <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
-                                    data-lk="project3introduction">
-
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="md:w-[90%] mx-auto bg-slate-50">
-                    <a href="https://github.com/Dramalf/DramaDirector" target="_blank"
-                        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-48">
-                            <img class="w-2/5 h-full object-cover" src="./assets/p4.jpg" alt="Project Cover">
-                            <div class="w-3/5 p-4">
-                                <h5 class="text-lg font-bold" data-lk="project4name"></h5>
-                                <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
-                                    data-lk="project4introduction">
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="md:w-[90%] mx-auto bg-slate-50">
-                    <a href="https://github.com/Dramalf/puppeteer-webcodec-lottie" target="_blank"
-                        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-48">
-                            <img class="w-2/5 h-full object-cover" src="./assets/p5.jpg" alt="Project Cover">
-                            <div class="w-3/5 p-4">
-                                <h5 class="text-lg font-bold" data-lk="project5name"></h5>
-                                <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
-                                    data-lk="project5introduction">
-
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="md:w-[90%] mx-auto bg-slate-50">
-                    <a href="https://github.com/Dramalf/Web-Custom-Tower-Defense-game" target="_blank"
-                        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="flex items-center justify-start h-48">
-                            <img class="w-2/5 h-full object-cover" src="./assets/p6.jpg" alt="Project Cover">
-                            <div class="w-3/5 p-4">
-                                <h5 class="text-lg font-bold" data-lk="project6name"></h5>
-                                <p class="text-sm text-gray-600 mt-2 line-clamp-3 overflow-hidden"
-                                    data-lk="project6introduction">
-
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
-        <div class="hidden md:block swiper-button-prev"></div>
-        <div class="hidden md:block swiper-button-next"></div>
+        <div class="hidden sm:block swiper-button-prev"></div>
+        <div class="hidden sm:block swiper-button-next"></div>
 
 
     </div>
 
-    <footer class="absolute  text-xs bottom-1 md:bottom-10 m-auto text-gray-600">
+    <footer class="absolute  text-xs bottom-1 sm:bottom-10 m-auto text-gray-600">
         <p>&copy; 2024 Jerry Ma</p>
     </footer>
+
     <script>
+        const wrapper = document.querySelector('.swiper-wrapper');
+        new Array(6).fill(0).forEach((_, index) => {
+            const div = document.createElement('div');
+            div.classList.add('swiper-slide');
+            const i = index + 1
+            div.innerHTML = `<project-card index="${i}" lang="${window.lang}"></project-card>`
+            wrapper.appendChild(div);
+        })
         const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'vertical',
+            direction: 'horizontal',
             autoplay: {
                 disableOnInteraction: false, // 鼠标滑动后继续自动播放
                 delay: 5000, //4秒切换一次
@@ -210,34 +131,33 @@
             },
             effect: 'coverflow',
             coverflowEffect: {
-                rotate: 10, 
-                stretch: 150, 
-                depth: 300, 
-                modifier: 1, 
-                slideShadows: false 
+                rotate: 10,
+                stretch: 150,
+                depth: 300,
+                modifier: 1.18,
+                slideShadows: false
             }
         });
     </script>
     <script>
-        fetch('./language.json')
-            .then(res => res.json())
-            .then(languageObj => {
-                function switchLanguage(lang) {
-                    document.querySelectorAll("[data-lk]").forEach(el => {
-                        el.textContent = languageObj[lang][el.getAttribute("data-lk")];
-                    });
-                }
-                const siDom=document.getElementById('self-introduction');
-                document.getElementById('lang-en').addEventListener('click', () => {
-                    siDom.classList.remove('leading-8');
-                    switchLanguage('en');
-                });
-                document.getElementById('lang-zh').addEventListener('click', () => {
-                    siDom.classList.add('leading-8');
-                    switchLanguage('zh');
-                });
-                switchLanguage('en')
+        function switchLanguage(lang) {
+            document.querySelectorAll("[data-lk]").forEach(el => {
+                el.textContent = languageObj[lang][el.getAttribute("data-lk")];
+            });
+            document.querySelectorAll('project-card').forEach(el => {
+                el.setAttribute('lang', lang);
             })
+        }
+        const siDom = document.getElementById('self-introduction');
+        document.getElementById('lang-en').addEventListener('click', () => {
+            siDom.classList.remove('leading-8');
+            switchLanguage('en');
+        });
+        document.getElementById('lang-zh').addEventListener('click', () => {
+            siDom.classList.add('leading-8');
+            switchLanguage('zh');
+        });
+        switchLanguage('en')
     </script>
 </body>
 
