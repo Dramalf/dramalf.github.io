@@ -1,9 +1,6 @@
-// import html from './card.html';
-// console.log(html)
 class ProjectCard extends HTMLElement {
     static observedAttributes = ['lang', 'index'];
     constructor() {
-        // Always call super first in constructor
         super();
     }
 

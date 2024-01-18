@@ -8,6 +8,7 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="./components/ProjectCard/index.js"></script>
+    <script src="./components/PenaltyBox/index.js"></script>
     <script src="./language.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
@@ -57,7 +58,7 @@
             <a id='easter-egg'
                 class="h-4 rounded-full   bg-slate-50 leading-4  p-1 pt-0  shadow-md text-center animate-pulse">⚽️
                 Football</a>
-            <div id='football' class="fixed hidden ">⚽️</div>
+            <div id='football' class="fixed hidden z-30 ">⚽️</div>
             <a href='https://www.bilibili.com/video/BV1gu411f7Vn/?spm_id_from=333.337.search-card.all.click&vd_source=12b37aa14c0f702ac85a90628323269d'
                 class="h-4 rounded-full  bg-cyan-50 leading-4 p-1  pt-0  shadow-md  text-center">🎬 Director</a>
         </div>
@@ -79,7 +80,8 @@
 
         </div>
     </div>
-
+    <video id="goal" src="./assets/goal.webm" class="fixed z-50 h-32 sm:hidden"></video>
+    <penalty-box />
     <footer class="absolute  text-xs bottom-1 sm:bottom-10 m-auto text-gray-600">
         <p>&copy; 2024 Jerry Ma</p>
     </footer>
@@ -137,78 +139,53 @@
     <script>
         const trigger = document.getElementById("easter-egg");
         const football = document.getElementById("football");
-        const { left: initX, top: initY } = trigger.getBoundingClientRect();
-        
-        football.style.left = initX;
-        football.style.top = initY;
+        const goalAnim = document.getElementById('goal');
         let isFlying = false;
         let speed = 10;
-        console.log(initX, initY)
         const area = [
             document.body.clientWidth,
             document.body.clientHeight
         ]
-        console.log(area)
-        const b1=document.createElement('div');
-        const b2=document.createElement('div');
-        b1.style.position='fixed';
-        b2.style.position='fixed';
-        b1.style.height=2;
-        b2.style.height=2;
-        b1.style.backgroundColor='#000'
-        b2.style.backgroundColor='#000'
-        b1.style.top=initY+2;
-        b1.style.left=initX;
-        b2.style.top=initY+2;
-        b2.style.left=initX+trigger.offsetWidth;
-        b1.style.transformOrigin= 'right top';
-        b2.style.transformOrigin= 'right top';
-        // document.body.appendChild(b1);
-        // document.body.appendChild(b2);
-        const calcLength=([x1,y1],[x2,y2])=>Math.sqrt((x1-x2)**2+(y1-y2)**2)
-        trigger.addEventListener('touchmove',(e)=>{
-            return
-                // const ex=e.left;
-                // const ey=e.top;
-                const {pageX,pageY}=e.touches[0];
-                b1.style.width=calcLength([initX,initY],[pageX,pageY])
-                b2.style.width=calcLength([initX,initY],[pageX,pageY])
-                b1.style.transform=`rotate(${Math.atan2(pageX-initX,initY-pageY)* (180/Math.PI)}deg)`;
-                b2.style.transform=`rotate(${Math.atan2(pageX-initX-trigger.offsetWidth,initY+-pageY)* (180/Math.PI)}deg)`;
-        })
+        goalAnim.style.top = trigger.offsetHeight + trigger.offsetTop
         trigger.addEventListener('click', () => {
-            return 
             if (isFlying) return
+            football.style.left = trigger.offsetLeft + 0.5 * trigger.offsetWidth;
+            football.style.top = trigger.offsetTop;
             isFlying = true;
             football.classList.remove('hidden')
             football.classList.add('block')
-            let direction = [Math.random() - 0.5, Math.random() - 0.5];
-
+            let direction = [(Math.random() - 0.5) * 0.8, Math.random() * 0.4 + 0.4];
+            let aid;
+            const resetAnim = (scored) => {
+                cancelAnimationFrame(aid);
+                isFlying = false;
+                football.classList.remove('block');
+                football.classList.add('hidden')
+                if (scored) {
+                    goalAnim.play()
+                }
+            }
             const fly = () => {
                 const lastX = parseFloat(football.style.left);
                 const lastY = parseFloat(football.style.top);
-                // console.log(direction,lastX,area[0])
-                if (lastX < 2) {
-                    direction[0] = Math.abs(direction[0])
+                if (lastX > area[1] - 2 || lastX < 2) {
+                    resetAnim(false)
+                    return
                 }
-                if (lastX > area[0] - 2) {
-                    direction[0] = -Math.abs(direction[0])
-                }
-                if (lastY < 2) {
-                    direction[1] = Math.abs(direction[1])
-                }
-                if (lastY > area[1] - 2) {
-                    direction[1] = -Math.abs(direction[1])
+                if (lastY > area[1] - 5) {
+                    if (Math.abs(lastX - area[0] / 2) < area[0] * 0.1) {
+                        resetAnim(true)
+                    } else {
+                        resetAnim(false)
+                    }
+                    return
                 }
                 football.style.left = lastX + direction[0] * speed;
                 football.style.top = lastY + direction[1] * speed;
-
-
-                requestAnimationFrame(fly)
+                aid = requestAnimationFrame(fly)
 
             }
-
-            fly()
+            aid = requestAnimationFrame(fly)
         })
     </script>
 </body>
