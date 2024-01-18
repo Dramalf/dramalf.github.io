@@ -5,52 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Jerry Ma</title>
     <link rel="stylesheet" href="./build.css">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="./components/ProjectCard/index.js"></script>
     <script src="./language.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <style>
-        .swiper-button-next {
-            color: #666;
-            transform: scale(0.5);
-            margin-right: -10px
-        }
-
-        .swiper-button-prev {
-            color: #666;
-            transform: scale(0.5);
-            margin-left: -10px;
-        }
-
-        .swiper-button-prev {
-            box-shadow: none !important;
-        }
-
-        .swiper-button-next {
-            box-shadow: none !important;
-        }
-    </style>
 </head>
 
 <body class="relative font-mono  sm:m-auto lg:w-[50vw]
  flex flex-col-reverse sm:flex-col justify-end sm:justify-start items-center
  bg-amber-0 lg:bg-white min-h-screen h-max
    shadow rounded-lg p-6 pt-10 overflow-y-scroll">
-    <div class="absolute top-0 right-6">
+    <div class="absolute top-2 right-6">
         <button id="lang-en" class="">English</button>
         |
         <button id="lang-zh">中文</button>
     </div>
     <div class="w-full flex flex-col justify-center items-center">
         <div class="mb-4 sm:mb-0 relative w-full h-full flex flex-col sm:flex-row items-center justify-between">
-            <div class="flex flex-col h-full w-full justify-around items-center sm:items-start">
+            <div class="flex flex-col h-full w-full justify-between items-center sm:items-start">
                 <div >
                     <span class="text-4xl sm:text-2xl font-semibold" data-lk="name"></span>
                     <span class="text-xl sm:text-base font-mono" data-lk="nickname"> </span>
                 </div>
                 
-                <div class=" mb-4 sm:mb-2 flex mt-4 sm:mt-2 flex-col items-center sm:items-start">
+                <div class=" mb-4 sm:mb-2 flex sm:mt-2 flex-col items-center sm:items-start">
                     <span class="flex h-4 text-sm items-center">
                         <img src="./assets/email.svg" class="h-4 object-contain mr-1" /> dramalfcsc@gmail.com
                     </span>
@@ -58,7 +37,7 @@
                         <img src="./assets/github.svg" class="h-4 object-contain mr-1" /><a
                             href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
                     </span>
-                    <img src="./assets/avatar.jpg" class="mt-8 -mb-4 sm:hidden w-20 h-20  object-cover 
+                    <img src="./assets/avatar.jpg" class="mt-6 -mb-4 sm:hidden w-20 h-20  object-cover 
                     rounded-full overflow-hidden">
                 </div>
                 <div id="education" class="hidden sm:block">
@@ -88,16 +67,14 @@
         </p>
     </div>
 
-    <div class="swiper  w-full h-36 sm:h-min p-6 sm:mb-3 box-border overflow-hidden ">
+    <div class="swiper  w-full h-36 sm:h-min p-6 sm:mb-3 box-border overflow-hidden "
+        style="padding:1.5rem"
+    >
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
 
         </div>
-        <div class="hidden sm:block swiper-button-prev"></div>
-        <div class="hidden sm:block swiper-button-next"></div>
-
-
     </div>
 
     <footer class="absolute  text-xs bottom-1 sm:bottom-10 m-auto text-gray-600">
@@ -124,11 +101,6 @@
             slidesPerView: "auto",
             centeredSlides: true,
             spaceBetween: 20,
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
             effect: 'coverflow',
             coverflowEffect: {
                 rotate: 10,
