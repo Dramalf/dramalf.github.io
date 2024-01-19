@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
+
 <body class="relative font-mono  sm:m-auto lg:w-[50vw]
  flex flex-col-reverse sm:flex-col justify-end sm:justify-start items-center
  bg-amber-0 lg:bg-white min-h-screen h-max
@@ -38,7 +39,7 @@
                         <img src="./assets/github.svg" class="h-4 object-contain mr-1" /><a
                             href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
                     </span>
-                    <img src="./assets/avatar.jpg" class="mt-6 -mb-4 sm:hidden w-20 h-20  object-cover 
+                    <img id='avatar' src="./assets/avatar.jpg" class="mt-6 -mb-4 sm:hidden w-20 h-20  object-cover 
                     rounded-full overflow-hidden">
                 </div>
                 <div id="education" class="hidden sm:block">
@@ -80,7 +81,6 @@
 
         </div>
     </div>
-    <video id="goal" src="./assets/goal.webm" class="fixed z-50 h-32 sm:hidden"></video>
     <penalty-box />
     <footer class="absolute  text-xs bottom-1 sm:bottom-10 m-auto text-gray-600">
         <p>&copy; 2024 Jerry Ma</p>
@@ -116,6 +116,8 @@
             }
         });
     </script>
+
+
     <script>
         function switchLanguage(lang) {
             document.querySelectorAll("[data-lk]").forEach(el => {
@@ -136,24 +138,34 @@
         });
         switchLanguage('en')
     </script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <script>
         const trigger = document.getElementById("easter-egg");
         const football = document.getElementById("football");
-        const goalAnim = document.getElementById('goal');
+        const goalAnim = document.createElement('dotlottie-player');
+        goalAnim.classList.add('fixed');
+        goalAnim.setAttribute('src', "https://lottie.host/0aafc840-c2b0-44d0-aca5-15de4c924197/ShJtSrIP1D.json");
+        goalAnim.setAttribute('background', "transparent");
+        goalAnim.setAttribute('speed', "2");
+        goalAnim.setAttribute('style', "width:20vw; height: 20vw;");
+        document.body.appendChild(goalAnim);
+        goalAnim.style.top = trigger.getBoundingClientRect().y + trigger.offsetHeight + 5
         let isFlying = false;
         let speed = 10;
         const area = [
             document.body.clientWidth,
             document.body.clientHeight
         ]
-        goalAnim.style.top = trigger.offsetHeight + trigger.offsetTop
-        trigger.addEventListener('click', () => {
-            if (isFlying) return
+        const initPosition = () => {
             football.style.left = trigger.offsetLeft + 0.5 * trigger.offsetWidth;
-            football.style.top = trigger.offsetTop;
-            isFlying = true;
+            football.style.top = trigger.getBoundingClientRect().y;
             football.classList.remove('hidden')
             football.classList.add('block')
+        }
+        trigger.addEventListener('click', () => {
+            if (isFlying) return
+            isFlying = true;
+            initPosition();
             let direction = [(Math.random() - 0.5) * 0.8, Math.random() * 0.4 + 0.4];
             let aid;
             const resetAnim = (scored) => {
@@ -162,7 +174,12 @@
                 football.classList.remove('block');
                 football.classList.add('hidden')
                 if (scored) {
-                    goalAnim.play()
+                    try {
+                        goalAnim.seek(0);
+                        goalAnim.play();
+                    } catch (err) {
+
+                    }
                 }
             }
             const fly = () => {
