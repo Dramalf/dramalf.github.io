@@ -2,8 +2,9 @@ window.languageObj = {
     "zh": {
         name: "马聆风",
         nickname: "Jerry Ma",
-        university1: "华中科技大学 计算机科学与技术 本科",
-        work1: "阿里巴巴-淘天集团-SMEs 前端工程师",
+        university1: "2018-22 HUST 计算机科学与技术 学士",
+        university2: "2024🏃‍♂️ UCSD 电子与计算机工程 硕士",
+        work1: "2022-24 阿里巴巴-SMEs 前端工程师",
         introduction1: "我对音视频互动、多媒体技术、游戏开发感兴趣。大学期间，我掌握了一些软件开发技术，并且热衷于开发一些有趣的应用。工作后，主要负责多媒体素材处理，开发了一些音视频加工内核。除了业务和平台的前端开发工作，浏览器插件和服务端的一些开发也都长期在参与。",
         introduction2: "在将来，我想去学习一些硬件开发技术，研发针对运动员的『智能可穿戴设备』。这些可穿戴设备能收集并分析团体运动中的数据，给出运动员更合理更奏效的战术策略、指导运动姿态、提高运动表现。",
         project1name: "体感VR射击游戏",
@@ -24,8 +25,9 @@ window.languageObj = {
     en: {
         name: "Jerry Ma",
         nickname: "马聆风",
-        university1: "HUST - CS Bachelor's degree",
-        work1: "Alibaba Group SMEs - SDE",
+        university1: "2018-22 HUST - BS in CS",
+        university2: "2024🏃‍♂️ UCSD - MS in ECE",
+        work1: "2022-24 Alibaba SMEs - SDE",
         introduction1: "I am interested in audio and video interaction, multimedia processing and game development. During university I learned some software development skills and was keen to develop some interesting applications. After work, I was mainly responsible for multimedia processing and developed some audio and video synthesis kernels. ",
         introduction2: "In the future, I would like to learn some hardware development techniques and develop 「smart wearable devices」 for athletes. These wearable devices can collect and analyse data from team sports to provide athletes with more rational and effective tactical strategies, posture guidance and improved performance.",
         project1name: "Motion Sensory VR Shooting Game",

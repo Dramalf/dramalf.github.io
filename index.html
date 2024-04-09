@@ -25,27 +25,30 @@
     <div class="w-full flex flex-col justify-center items-center">
         <div class="mb-4 sm:mb-0 relative w-full h-full flex flex-col sm:flex-row items-center justify-between">
             <div class="flex flex-col h-full w-full justify-between items-center sm:items-start">
-                <div>
+                <div class="mb-2">
                     <span class="text-4xl sm:text-2xl font-semibold" data-lk="name"></span>
                     <span class="text-xl sm:text-base font-mono" data-lk="nickname"> </span>
                 </div>
 
-                <div class=" mb-4 sm:mb-2 flex sm:mt-2 flex-col items-center sm:items-start">
+                <div class=" mb-4 sm:mb-2 flex flex-col items-center sm:items-start">
                     <span class="flex h-4 text-sm items-center">
                         <img src="./assets/email.svg" class="h-4 object-contain mr-1" /> dramalfcsc@gmail.com
                     </span>
                     <span class="mt-2 flex h-4 text-sm items-center">
-                        <img src="./assets/github.svg" class="h-4 object-contain mr-1" /><a
-                            href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
+                        <img src="./assets/github.svg" class="h-4 object-contain mr-1" />
+                        <a href="https://github.com/Dramalf" target="_blank">https://github.com/Dramalf</a>
                     </span>
-                    <img id='avatar' src="./assets/avatar.jpg" class="mt-6 -mb-4 sm:hidden w-20 h-20  object-cover 
+                    <img id='avatar' src="./assets/avatar.jpg" class="mt-4 -mb-2 sm:hidden w-20 h-20  object-cover 
                     rounded-full overflow-hidden">
                 </div>
-                <div id="education" class="hidden sm:block">
+                <div class="education sm:block">
                     <li class="mb-2 sm:mb-0 text-gray-600 text-xs sm:text-sm" data-lk="university1"></li>
                 </div>
-                <div id="work-experience" class="hidden sm:block">
-                    <li class="text-gray-600 text-xs sm:text-sm" data-lk="work1"></li>
+                <div class="work-experience sm:block">
+                    <li class="mb-2 sm:mb-0 text-gray-600 text-xs sm:text-sm" data-lk="work1"></li>
+                </div>
+                <div class="education sm:block">
+                    <li class="mb-2 sm:mb-0 text-gray-600 text-xs sm:text-sm" data-lk="university2"></li>
                 </div>
             </div>
             <img src="./assets/avatar.jpg" class="hidden sm:block w-48 h-32 object-cover 
@@ -161,7 +164,7 @@
             if (isFlying) return
             isFlying = true;
             initPosition();
-            let direction = [(Math.random() - 0.5) * 0.8, Math.random() * 0.4 + 0.4];
+            let direction = [(Math.random() - 0.5) * 0.2, Math.random() * 0.4 + 0.6];
             let aid;
             const resetAnim = (scored) => {
                 cancelAnimationFrame(aid);
