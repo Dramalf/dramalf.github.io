@@ -1,5 +1,6 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "repository": "https://github.com/Dramalf/dramalf.github.io.git"
 }

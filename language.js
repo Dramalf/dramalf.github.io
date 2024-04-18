@@ -20,7 +20,9 @@ window.languageObj = {
         project6name: "自定义塔防游戏",
         project6introduction: "基于预设数据来驱动地图加载和怪兽波次，你还以自定义防御塔的样式和攻击属性。灵感来源于我很喜欢的一款塔防游戏《皇家守卫军》",
         project7name:"单词备忘录浏览器插件",
-        project7introduction:"通过一些快捷键帮你快速查询网页上的单词，加入单词本，支持导出和命令行单词测试"
+        project7introduction:"通过一些快捷键帮你快速查询网页上的单词，加入单词本，支持导出和命令行单词测试",
+        project8name:"Mac剪贴板历史管理器",
+        project8introduction:"Rust实现，实现剪贴板历史的复用"
     },
     en: {
         name: "Jerry Ma",
@@ -43,7 +45,9 @@ window.languageObj = {
         project6name: "Custom tower defence game",
         project6introduction: "You can customise the map, monsters and defence properties with preset data. Inspired by one of my favourite tower defence games 「Kingdom Rush」",
         project7name:"WordPicker",
-        project7introduction:"A chrome extension helps you to search and record the word from the web pages. It also supports you to do words test in dev-cli."
+        project7introduction:"A chrome extension helps you to search and record the word from the web pages. It also supports you to do words test in dev-cli.",
+        project8name:"Mac Clipboard Recorder",
+        project8introduction:"Implemented by rust, manage your clipboard history on MacOS"
     }
 }
 window.lang = 'en'
@@ -55,5 +59,6 @@ window.projectLinks = [
     'https://github.com/Dramalf/DramaDirector',
     'https://github.com/Dramalf/puppeteer-webcodec-lottie',
     'https://github.com/Dramalf/Web-Custom-Tower-Defense-game',
-    'https://github.com/Dramalf/WordPicker'
+    'https://github.com/Dramalf/WordPicker',
+    'https://github.com/Dramalf/clipboard-recorder'
 ]
