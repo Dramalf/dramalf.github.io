@@ -2,8 +2,8 @@ window.languageObj = {
     "zh": {
         name: "马聆风",
         nickname: "Jerry Ma",
-        university1: "2018-22 HUST 计算机科学与技术 学士",
-        university2: "2024🏃‍♂️ UCSD 电子与计算机工程 硕士",
+        university1: "2024🏃‍♂️ UCSD 电子与计算机工程 硕士",
+        university2: "2018-22 HUST 计算机科学与技术 学士",
         work1: "2022-24 阿里巴巴-SMEs 前端工程师",
         introduction1: "我对音视频互动、多媒体技术、游戏开发感兴趣。大学期间，我掌握了一些软件开发技术，并且热衷于开发一些有趣的应用。工作后，主要负责多媒体素材处理，开发了一些音视频加工内核。除了业务和平台的前端开发工作，浏览器插件和服务端的一些开发也都长期在参与。",
         introduction2: "我平时喜欢写作、足球、游泳。如果有的选😁我也许想成为一名足球运动员或者导演，哈哈，没有机会了是不是？😂 不过我现在发现编程也很有意思——但以后，谁知道呢，哈哈",
@@ -22,13 +22,15 @@ window.languageObj = {
         project7name:"单词备忘录浏览器插件",
         project7introduction:"通过一些快捷键帮你快速查询网页上的单词，加入单词本，支持导出和命令行单词测试",
         project8name:"Mac剪贴板历史管理器",
-        project8introduction:"Rust实现，实现剪贴板历史的复用"
+        project8introduction:"Rust实现，实现剪贴板历史的复用",
+        project9name:"构建你的技能树",
+        project9introduction:"Chrome内置的大语言模型，完全本地化部署，记录你的技术成长, 可视化独属于你的技能树🌲"
     },
     en: {
         name: "Jerry Ma",
         nickname: "马聆风",
-        university1: "2018-22 HUST - BS in CS",
-        university2: "2024🏃‍♂️ UCSD - MS in ECE",
+        university1: "2024🏃‍♂️ UCSD - MS in ECE",
+        university2: "2018-22 HUST - BS in CS",
         work1: "2022-24 Alibaba SMEs - SDE",
         introduction1: "I am interested in multimedia processing and game development. During university I learned some software development skills and was keen to build some interesting applications. After work, I was mainly responsible for multimedia processing and developed some audio and video synthesis kernels. ",
         introduction2: "I enjoy writing, playing soccer, and swimming. If I had a choice, I’d probably be a soccer player or a director—yeah, I know, not happening, right? 😂 But hey, I’ve discovered coding is pretty cool too. Who knows what the future holds? Maybe I’ll still get my Oscar... or score that winning goal! 😆",
@@ -47,7 +49,9 @@ window.languageObj = {
         project7name:"WordPicker",
         project7introduction:"A chrome extension helps you to search and record the word from the web pages. It also supports you to do words test in dev-cli.",
         project8name:"Mac Clipboard Recorder",
-        project8introduction:"Implemented by rust, manage your clipboard history on MacOS"
+        project8introduction:"Implemented by rust, manage your clipboard history on MacOS",
+        project9name:"Build Your Own Skill Tree",
+        project9introduction:"SkillSeed is a Chrome extension that brings clarity and joy to your learning journey, visualizing your technical skills, tracking your growth, and celebrating your achievements🎉 OH, many tech memes!"
     }
 }
 window.lang = 'en'
@@ -60,5 +64,6 @@ window.projectLinks = [
     'https://github.com/Dramalf/puppeteer-webcodec-lottie',
     'https://github.com/Dramalf/Web-Custom-Tower-Defense-game',
     'https://github.com/Dramalf/WordPicker',
-    'https://github.com/Dramalf/clipboard-recorder'
+    'https://github.com/Dramalf/clipboard-recorder',
+    'https://devpost.com/software/skillseed'
 ]
